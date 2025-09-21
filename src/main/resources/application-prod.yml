@@ -1,0 +1,14 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+  datasource:
+    url:
+    username:
+    password:
+    driver-class-name: org.postgresql.Driver
+
+aws:
+  s3:
+    bucket: prod-bucket

@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: groupware
+  profiles:
+    active: local
+logging:
+  level:
+    root: info

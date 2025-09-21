@@ -1,0 +1,13 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/groupware_local
+    username: local_user
+    password: local_pass
+    driver-class-name: org.postgresql.Driver
+aws:
+  s3:
+    bucket: local-bucket
