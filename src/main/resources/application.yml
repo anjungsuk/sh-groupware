@@ -3,6 +3,16 @@ spring:
     name: groupware
   profiles:
     active: local
+
+# MyBatis 공통 설정
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    use-generated-keys: true
+    default-fetch-size: 100
+    default-statement-timeout: 30
+
 logging:
   level:
     root: info
