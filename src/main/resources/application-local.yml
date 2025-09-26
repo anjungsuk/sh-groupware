@@ -4,10 +4,15 @@ spring:
       on-profile: local
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/groupware_local
-    username: local_user
-    password: local_pass
+    url: jdbc:postgresql://15.164.102.172:5432/shlogis_db
+    username: shlogis
+    password:    # Jasypt 사용중인데 암호화 계속 에러남,, 수정 필요
     driver-class-name: org.postgresql.Driver
+    hikari:
+      pool-name: Hikari Connection Pool
+      maximum-pool-size: 20
+
+
 aws:
   s3:
     bucket: local-bucket

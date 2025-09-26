@@ -21,12 +21,5 @@ public class NoticeController {
 
     private final NoticeService noticeService;
 
-    @GetMapping("/list")
-    public ResponseEntity<?> list(NoticeApiSO noticeApi) {
-
-        List<NoticeResponseDto> list = noticeService.noticeList(noticeApi);
-
-        return ResponseEntity.ok(noticeApi);
-    }
 
 }

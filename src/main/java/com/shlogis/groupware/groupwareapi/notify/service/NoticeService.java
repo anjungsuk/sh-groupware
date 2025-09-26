@@ -15,11 +15,5 @@ import java.util.List;
 @RequiredArgsConstructor
 public class NoticeService {
 
-    private final NoticeMapper noticeMapper;
 
-    public List<NoticeResponseDto> noticeList(NoticeApiSO noticeApi) {
-
-        return noticeMapper.selectNoticeList(noticeApi);
-
-    }
 }

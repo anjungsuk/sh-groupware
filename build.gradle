@@ -25,8 +25,14 @@ dependencies {
     // Spring Security
     implementation 'org.springframework.boot:spring-boot-starter-security'
 
+    implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.3'
     // MyBatis + Spring Boot
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.4'
+    // Spring data jdbc
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    //Spring Devtools
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
 
     // PostgreSQL
     runtimeOnly 'org.postgresql:postgresql'
