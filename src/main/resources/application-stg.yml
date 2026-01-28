@@ -1,0 +1,29 @@
+spring:
+  config:
+    activate:
+      on-profile: stg
+
+  # 현재 로컬 DB 사용 (추후 환경별 분리 예정)
+  datasource:
+    url: jdbc:postgresql://15.164.102.172:5432/shlogis_db
+    username: shlogis
+    password: ENC(wjQ7yIcSwX3PzeEVeN/h5KI0XeyLVmjO)
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      pool-name: Hikari-STG-Pool
+      maximum-pool-size: 30
+      minimum-idle: 10
+      idle-timeout: 300000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+
+aws:
+  s3:
+    bucket: ${S3_BUCKET:stg-bucket}
+    region: ${AWS_REGION:ap-northeast-2}
+
+logging:
+  level:
+    root: INFO
+    com.shlogis.groupware: DEBUG
+    org.springframework.web: INFO

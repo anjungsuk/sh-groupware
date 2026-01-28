@@ -1,0 +1,29 @@
+spring:
+  config:
+    activate:
+      on-profile: prd
+
+  # 현재 로컬 DB 사용 (추후 환경별 분리 예정)
+  datasource:
+    url: jdbc:postgresql://15.164.102.172:5432/shlogis_db
+    username: shlogis
+    password: ENC(wjQ7yIcSwX3PzeEVeN/h5KI0XeyLVmjO)
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      pool-name: Hikari-PRD-Pool
+      maximum-pool-size: 50
+      minimum-idle: 20
+      idle-timeout: 300000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+
+aws:
+  s3:
+    bucket: ${S3_BUCKET:prd-bucket}
+    region: ${AWS_REGION:ap-northeast-2}
+
+logging:
+  level:
+    root: WARN
+    com.shlogis.groupware: INFO
+    org.springframework.web: WARN
