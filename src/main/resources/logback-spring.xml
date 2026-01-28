@@ -12,8 +12,12 @@
         <include resource="logback-dev.xml"/>
     </springProfile>
 
-    <springProfile name="prod">
-        <include resource="logback-prod.xml"/>
+    <springProfile name="stg">
+        <include resource="logback-stg.xml"/>
+    </springProfile>
+
+    <springProfile name="prd">
+        <include resource="logback-prd.xml"/>
     </springProfile>
 
 </configuration>

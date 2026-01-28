@@ -4,6 +4,18 @@ spring:
   profiles:
     active: local
 
+# Jasypt 암호화 설정
+jasypt:
+  encryptor:
+    password: ${JASYPT_PASSWORD:shlogis-default-key}
+    algorithm: PBEWithMD5AndDES
+    key-obtention-iterations: 1000
+    pool-size: 1
+    provider-name: SunJCE
+    salt-generator-classname: org.jasypt.salt.RandomSaltGenerator
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
+    string-output-type: base64
+
 # MyBatis 공통 설정
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml

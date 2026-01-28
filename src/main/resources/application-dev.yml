@@ -3,12 +3,28 @@ spring:
     activate:
       on-profile: dev
 
+  # 현재 로컬 DB 사용 (추후 환경별 분리 예정)
   datasource:
-    url:
-    username:
-    password:
+    url: jdbc:postgresql://15.164.102.172:5432/shlogis_db
+    username: shlogis
+    password: ENC(wjQ7yIcSwX3PzeEVeN/h5KI0XeyLVmjO)
     driver-class-name: org.postgresql.Driver
+    hikari:
+      pool-name: Hikari-DEV-Pool
+      maximum-pool-size: 20
+      minimum-idle: 5
+      idle-timeout: 300000
+      max-lifetime: 1800000
+      connection-timeout: 30000
 
 aws:
   s3:
-    bucket: dev-bucket
+    bucket: ${S3_BUCKET:dev-bucket}
+    region: ${AWS_REGION:ap-northeast-2}
+
+logging:
+  level:
+    root: INFO
+    com.shlogis.groupware: DEBUG
+    org.springframework.web: DEBUG
+    org.mybatis: DEBUG
